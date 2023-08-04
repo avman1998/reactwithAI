@@ -6,14 +6,14 @@ import "./App.css";
 function App({ id }) {
   const [product, setProduct] = useState();
 
-  // impure code
+  // impure code written here
   async function fetchData(id) {
     const res = await fetch(`https://dummyjson.com/products/${id}`);
     const data = await res.json();
     setProduct(data);
   }
 
-  //safe place to write impure code.
+  //safe place to write impure code to avoid side effects.
   useEffect(() => {
     fetchData(id);
   }, [id]);
