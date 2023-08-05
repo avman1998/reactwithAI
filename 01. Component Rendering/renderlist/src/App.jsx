@@ -1,4 +1,5 @@
 const App = () => {
+  //Array to be rendered.
   const names = ["aman", "riya", "amit", "tushar"];
 
   return (
