@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 function App() {
+  //From State
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -22,7 +23,10 @@ function App() {
     ],
     country: "",
   });
+  // Submit state
   const [submitted, setSubmitted] = useState(false);
+
+  // Common Change Function
   const handleChange = (e) => {
     setFormState((prev) => {
       return {
@@ -31,12 +35,16 @@ function App() {
       };
     });
   };
+
+  //Specific fucntion for Checkbox Change
   const handleCheckBoxChange = (e, id) => {
     setFormState((prev) => {
       prev.interest[id].checked = !prev.interest[id].checked;
       return { ...prev };
     });
   };
+
+  //Array for Checked Checkbox
   const checkboxStatuArray = formState.interest.filter((item) => item.checked);
   console.log(formState);
   return (
@@ -150,6 +158,7 @@ function App() {
 
         <input type="submit" value="Submit" />
       </form>
+
       {submitted && (
         <div>
           <h1>Summary</h1>
