@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import "./App.css";
-
+import PropTypes from "prop-types";
 function App(props) {
   return (
     <>
@@ -10,5 +10,9 @@ function App(props) {
     </>
   );
 }
-
+App.propTypes = {
+  name: PropTypes.string,
+  address: PropTypes.string,
+  phone: PropTypes.string,
+};
 export default App;
