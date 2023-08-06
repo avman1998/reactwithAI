@@ -10,9 +10,5 @@ function App(props) {
     </>
   );
 }
-App.propTypes = {
-  name: PropTypes.string,
-  address: PropTypes.string,
-  phone: PropTypes.string,
-};
+
 export default App;
