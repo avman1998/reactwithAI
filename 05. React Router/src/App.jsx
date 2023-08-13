@@ -1,23 +1,13 @@
 import "./App.css";
-import { Link } from "react-router-dom";
+import Header from "./Header";
+import { Outlet } from "react-router-dom";
 function App() {
+  // Outlet component is for childrens
+  console.log("Outlet", Outlet);
   return (
     <>
-      <header>
-        <ul className="flex gap-5 ">
-          <Link to="/">
-            <li>Home</li>
-          </Link>
-
-          <Link to="/about">
-            {" "}
-            <li>About</li>
-          </Link>
-          <Link to="/contact">
-            <li>Contact</li>
-          </Link>
-        </ul>
-      </header>
+      <Header />
+      <Outlet />
     </>
   );
 }
