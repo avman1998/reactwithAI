@@ -1,6 +1,8 @@
 import ReactDOM from "react-dom/client";
+import Body from "./Body.jsx";
 import App from "./App.jsx";
 import Contact from "./contact.jsx";
+import ProductWatcher from "./ProductWatcher.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 const appRouter = createBrowserRouter([
@@ -10,7 +12,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <>This is Main Page</>,
+        element: <Body />,
       },
       {
         path: "/about",
@@ -27,6 +29,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/email",
         element: <h1>Please email here......</h1>,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductWatcher />,
       },
     ],
   },
