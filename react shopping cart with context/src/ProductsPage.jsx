@@ -1,18 +1,28 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import Product from "./Product";
 const ProductsPage = () => {
   const PROD_URL = "https://fakestoreapi.com/products";
   const [products, setProducts] = useState();
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     fetchProducts();
   }, []);
-  const fetchProducts = async () => {
+
+  // useCallback=> related to re-creating
+  const fetchProducts = useCallback(async () => {
     const res = await fetch(PROD_URL);
     const data = await res.json();
     setProducts(data);
-  };
+  }, []);
 
+  // const fetchProducts = async () => {
+  //   const res = await fetch(PROD_URL);
+  //   const data = await res.json();
+  //   setProducts(data);
+  // };
+
+  // useMemo=> storing results of complex computation
   const DisplayProducts = useMemo(() => {
     return products?.map((item) => {
       console.log("It is rendering");
