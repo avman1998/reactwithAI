@@ -9,9 +9,9 @@ const Product = ({ item }) => {
     setCartArray((prev) => [...prev, item]);
   }
   return (
-    <div className="flex flex-col gap-3 p-2 bg-blue-300 text-black w-[200px]">
-      <img src={item.image} alt={item.title} />
-      <p>{item.title}</p>
+    <div className="flex flex-col gap-3 p-2  text-black w-[200px]">
+      <img src={item.image} alt={item.title} className="w-50 h-60" />
+      {/* <p>{item.title}</p> */}
       <button onClick={addToCart} className="text-white">
         Add to cart
       </button>
